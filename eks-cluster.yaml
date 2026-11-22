@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: project14-cluster
+  region: ap-south-1
+
+vpc:
+  id: vpc-03056c49513a18e80
+  subnets:
+    public:
+      ap-south-1a:
+        id: subnet-09664e6bf506d045c
+      ap-south-1b:
+        id: subnet-015e959fa4b29064e
+
+managedNodeGroups:
+  - name: workers
+    instanceType: t3.small
+    desiredCapacity: 2
